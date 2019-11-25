@@ -17,22 +17,19 @@ export default class App extends Component {
     }
     handleName = (event) => {
         let name = event.target.name;
+        let val = event.target.value;
         this.setState({
-            [name]: ''
+            [name]: val
         });
-    }
-    handleSubmit = (event) => {
-        event.preventDefault();
     }
 
 
     render() {
         return (
-            <div classNama="App">
+            <div classNama="">
                 <form onSubmit={this.handleSubmit}>
                     <Box component="span" display="block">
                         <TextFiled
-                            type="text"
                             id="standard-with-placeholder"
                             label="Nama Lengkap"
                             placeholder="Masukan nama"
@@ -45,9 +42,9 @@ export default class App extends Component {
                         <Button variant="contained" color="primary" type="submit">
                             Change your Nama
                         </Button>
+                        <h1> Hallo: {this.state.name}  </h1>
                     </Box>
                 </form>
-                <h1 value={this.state.name}> Hallo:  </h1>
             </div>
         );
     }
